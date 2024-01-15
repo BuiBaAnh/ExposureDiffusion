@@ -25,8 +25,8 @@ read_expo_ratio = lambda x: float(x.split('_')[-1][:-5])
 # eval_fns_list = [lst_1 + lst_2 for lst_1, lst_2 in zip(eval_fns_list, test_fns_list)]
 
 # evaluate 15 indoor scenes (but you can also evaluate the performance on the whole dataset)
-indoor_ids = dataset.read_paired_fns('./SID_Sony_15_paired.txt')
-# indoor_ids = dataset.read_paired_fns('./SID_ablation.txt')
+# indoor_ids = dataset.read_paired_fns('./SID_Sony_15_paired.txt')
+indoor_ids = dataset.read_paired_fns('/kaggle/input/puwell-test/Puwell_Test/puwell_val.txt')
 # indoor_ids = dataset.read_paired_fns('./SID_Sony_paired.txt')
 eval_fns_list = [[(fn[0], fn[1]) for fn in indoor_ids if int(fn[2]) == ratio] for ratio in expo_ratio]
 noise_model = noise.NoiseModel(model="P+g", include=4)
